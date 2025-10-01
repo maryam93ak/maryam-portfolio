@@ -1,0 +1,745 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Playground - Maryam Akhyani">
+  <main class="playground-page">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <span class="logo-text">MA</span>
+    </a>
+
+    <!-- Page Header with Filter -->
+    <div class="playground-header">
+      <h1>Playground</h1>
+      <div class="filter-dropdown">
+        <button class="filter-toggle" id="filterToggle" aria-label="Filter projects">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 5h16M5 10h10M8 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="filter-menu" id="filterMenu"></div>
+      </div>
+    </div>
+
+    <!-- Playground Grid -->
+    <div class="playground-content">
+      <div class="playground-grid">
+        <!-- Grid Item 1 - Mountain Landscape -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop"
+            alt="Mountain landscape at sunrise"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Landscape</div>
+            <h3>Mountain Dawn</h3>
+            <p>Capturing the first light</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 2 - Urban Architecture -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1000&auto=format&fit=crop"
+            alt="Modern architectural design"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Architecture</div>
+            <h3>Urban Lines</h3>
+            <p>Geometry in the city</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 3 - Portrait Study -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+            alt="Portrait of a woman"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Portrait</div>
+            <h3>Natural Light</h3>
+            <p>Authentic moments captured</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 4 - Food Photography -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"
+            alt="Gourmet dish"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Food</div>
+            <h3>Culinary Art</h3>
+            <p>Taste through the lens</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 5 - Interior Design -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=1000&auto=format&fit=crop"
+            alt="Modern interior space"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Interior</div>
+            <h3>Minimal Space</h3>
+            <p>Less is more</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 6 - Wildlife -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=1000&auto=format&fit=crop"
+            alt="Wildlife in nature"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Wildlife</div>
+            <h3>Wild Moments</h3>
+            <p>Nature's untamed beauty</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 7 - Street Photography -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=1000&auto=format&fit=crop"
+            alt="Street scene"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Street</div>
+            <h3>City Life</h3>
+            <p>Stories of the street</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 8 - Abstract Art -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000&auto=format&fit=crop"
+            alt="Abstract colorful patterns"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Abstract</div>
+            <h3>Color Theory</h3>
+            <p>Beyond the visible</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 9 - Nature Close-up -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop"
+            alt="Flower in bloom"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Nature</div>
+            <h3>Bloom</h3>
+            <p>Life in full color</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 10 - Architectural Detail -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1000&auto=format&fit=crop"
+            alt="Building details"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Architecture</div>
+            <h3>Structural Beauty</h3>
+            <p>Form and function united</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 11 - Landscape Vista -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1000&auto=format&fit=crop"
+            alt="Scenic landscape"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Landscape</div>
+            <h3>Horizon Lines</h3>
+            <p>Where earth meets sky</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 12 - Interior Details -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop"
+            alt="Interior corner detail"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Interior</div>
+            <h3>Cozy Corner</h3>
+            <p>Spaces that embrace</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 13 - Ocean Waves -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=1000&auto=format&fit=crop"
+            alt="Ocean waves"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Seascape</div>
+            <h3>Endless Motion</h3>
+            <p>The ocean's eternal dance</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 14 - Vintage Car -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1000&auto=format&fit=crop"
+            alt="Classic vintage car"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Automotive</div>
+            <h3>Classic Elegance</h3>
+            <p>Timeless design meets modern lens</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 15 - Botanical Close-up -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1000&auto=format&fit=crop"
+            alt="Botanical detail"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Botanical</div>
+            <h3>Natural Geometry</h3>
+            <p>Discovering patterns in nature</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 16 - Digital Art -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1000&auto=format&fit=crop"
+            alt="Digital art creation"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Digital</div>
+            <h3>Pixel Perfect</h3>
+            <p>Where technology meets creativity</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 17 - Forest Path -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=1000&auto=format&fit=crop"
+            alt="Forest pathway"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Forest</div>
+            <h3>Woodland Trail</h3>
+            <p>Journey into nature's heart</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 18 - City Skyline -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=1000&auto=format&fit=crop"
+            alt="City skyline at dusk"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Cityscape</div>
+            <h3>Metropolitan Dreams</h3>
+            <p>Urban landscapes painted with light</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 19 - Texture Study -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=1000&auto=format&fit=crop"
+            alt="Textural surface detail"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Texture</div>
+            <h3>Surface Stories</h3>
+            <p>Finding beauty in the everyday</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 20 - Aerial View -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1000&auto=format&fit=crop"
+            alt="Aerial landscape view"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Aerial</div>
+            <h3>Bird's Eye View</h3>
+            <p>Perspective from above</p>
+          </div>
+        </div>
+
+        <!-- Grid Item 21 - Fashion Portrait -->
+        <div class="grid-item">
+          <img
+            src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000&auto=format&fit=crop"
+            alt="Fashion portrait"
+          />
+          <div class="grid-item-overlay">
+            <div class="category">Fashion</div>
+            <h3>Style Statement</h3>
+            <p>Where fashion meets fine art</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Page Layout */
+  .playground-page {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+  }
+
+  /* Logo */
+  .logo {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.05);
+  }
+
+  .logo-text {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    letter-spacing: 0.05em;
+  }
+
+  /* Page Header */
+  .playground-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  .playground-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+  }
+
+  /* Filter Dropdown */
+  .filter-dropdown {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+  }
+
+  .filter-toggle {
+    background: var(--white);
+    border: 2px solid var(--primary-orange);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary-orange);
+    box-shadow: 0 2px 10px rgba(217, 109, 43, 0.1);
+  }
+
+  .filter-toggle:hover {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: rotate(90deg);
+  }
+
+  .filter-toggle.active {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: rotate(90deg);
+  }
+
+  .filter-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--white);
+    border: 2px solid var(--primary-orange);
+    border-radius: 12px;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .filter-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .filter-option {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(217, 109, 43, 0.1);
+  }
+
+  .filter-option:last-child {
+    border-bottom: none;
+  }
+
+  .filter-option:hover {
+    background: rgba(217, 109, 43, 0.05);
+    padding-left: 25px;
+  }
+
+  .filter-option.active {
+    background: var(--primary-orange);
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .filter-option .count {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  /* Playground Content */
+  .playground-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Playground Grid */
+  .playground-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    grid-auto-flow: dense;
+  }
+
+  /* Grid Items */
+  .grid-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--white);
+    aspect-ratio: 4/3;
+  }
+
+  .grid-item.hidden {
+    display: none;
+  }
+
+  .grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .grid-item:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Grid Item Overlay */
+  .grid-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px 20px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      transparent 100%
+    );
+    color: var(--white);
+    transform: translateY(0);
+    transition: all 0.4s ease;
+  }
+
+  .grid-item:hover .grid-item-overlay {
+    padding-bottom: 30px;
+  }
+
+  .grid-item-overlay .category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary-orange);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .grid-item-overlay h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: var(--white);
+  }
+
+  .grid-item-overlay p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .playground-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .playground-content {
+      padding: 0 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .playground-page {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .logo {
+      top: 20px;
+      left: 20px;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+    }
+
+    .filter-dropdown {
+      top: 20px;
+      right: 20px;
+    }
+
+    .filter-toggle {
+      width: 42px;
+      height: 42px;
+    }
+
+    .playground-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .playground-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .playground-content {
+      padding: 0 20px;
+    }
+
+    .grid-item-overlay h3 {
+      font-size: 1.25rem;
+    }
+
+    .grid-item-overlay p {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .playground-header h1 {
+      font-size: 2rem;
+    }
+
+    .playground-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .grid-item {
+      aspect-ratio: 3/4;
+    }
+
+    .filter-toggle {
+      width: 34px;
+      height: 34px;
+    }
+
+    .filter-toggle svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterToggle = document.getElementById("filterToggle");
+    const filterMenu = document.getElementById("filterMenu");
+    const gridItems = document.querySelectorAll(".grid-item");
+    let currentFilterOptions: HTMLElement[] = [];
+    let currentFilter = "all";
+
+    // Function to generate dynamic filter options
+    function generateDynamicFilters() {
+      // Get all unique categories from grid items
+      const categories = new Set<string>();
+
+      gridItems.forEach((item) => {
+        const categoryElement = item.querySelector(".category");
+        if (categoryElement) {
+          const categoryName = categoryElement.textContent?.trim();
+          if (categoryName) {
+            categories.add(categoryName);
+          }
+        }
+      });
+
+      // Clear existing options
+      if (filterMenu) {
+        filterMenu.innerHTML = "";
+      }
+      currentFilterOptions = [];
+
+      // Create "All Projects" option
+      const allOption = document.createElement("div");
+      allOption.className = "filter-option active";
+      allOption.setAttribute("data-filter", "all");
+      allOption.innerHTML = `All Projects <span class="count">(${gridItems.length})</span>`;
+      filterMenu?.appendChild(allOption);
+      currentFilterOptions.push(allOption);
+
+      // Create category options (sorted alphabetically)
+      const sortedCategories = Array.from(categories).sort();
+      sortedCategories.forEach((category) => {
+        // Count items for this category
+        let count = 0;
+        gridItems.forEach((item) => {
+          const categoryElement = item.querySelector(".category");
+          if (
+            categoryElement &&
+            categoryElement.textContent?.trim() === category
+          ) {
+            count++;
+          }
+        });
+
+        const option = document.createElement("div");
+        option.className = "filter-option";
+        option.setAttribute("data-filter", category);
+        option.innerHTML = `${category} <span class="count">(${count})</span>`;
+        filterMenu?.appendChild(option);
+        currentFilterOptions.push(option);
+      });
+
+      // Add click event listeners to options
+      currentFilterOptions.forEach((option) => {
+        option.addEventListener("click", handleFilterClick);
+      });
+    }
+
+    // Toggle dropdown
+    filterToggle?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      filterToggle.classList.toggle("active");
+      filterMenu?.classList.toggle("open");
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (
+        filterToggle &&
+        filterMenu &&
+        !filterToggle.contains(target) &&
+        !filterMenu.contains(target)
+      ) {
+        filterToggle.classList.remove("active");
+        filterMenu.classList.remove("open");
+      }
+    });
+
+    // Filter selection handler
+    function handleFilterClick(event: Event) {
+      const option = (event.target as HTMLElement).closest(".filter-option") as HTMLElement;
+      if (!option) return;
+
+      const filterValue = option.getAttribute("data-filter");
+      currentFilter = filterValue || "all";
+
+      // Update active states
+      currentFilterOptions.forEach((opt) => opt.classList.remove("active"));
+      option.classList.add("active");
+
+      // Close dropdown
+      filterToggle?.classList.remove("active");
+      filterMenu?.classList.remove("open");
+
+      // Apply filter
+      gridItems.forEach((item) => {
+        if (filterValue === "all") {
+          item.classList.remove("hidden");
+        } else {
+          // Check if the item matches the filter category
+          const categoryElement = item.querySelector(".category");
+          if (
+            categoryElement &&
+            categoryElement.textContent?.trim() === filterValue
+          ) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        }
+      });
+    }
+
+    // Note: Grid items are displayed as a static gallery.
+    // Individual project detail pages are available at /projects/* for select items.
+
+    // Initialize filter system
+    generateDynamicFilters();
+  });
+</script>

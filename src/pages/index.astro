@@ -1,16 +1,584 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Maryam Akhyani | Software Product Manager"
+  description="Personal portfolio for Maryam Akhyani, a Software Product Manager with a background in design, bridging creativity, empathy, and execution to build products users love."
+  currentPath="/"
+>
+  <!-- Hero Section -->
+  <header id="home">
+    <h1>Maryam Akhyani</h1>
+    <p class="subtitle">Software Product Manager</p>
+    <p class="tagline">Bridging creativity, empathy, and execution</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi there! <br />
+          I'm Maryam Akhyani, a software product manager with roots in
+          design. I began my career in architecture and computational
+          design, and my passion for technology led me to pivot into UX
+          design and eventually product management. Over the past six years,
+          I've been building SaaS products with a focus on creating
+          efficient, human-centered experiences. Curious by nature, I'm
+          always learning — from new languages to AI tools — and I thrive at
+          the intersection of design, data, and empathy. At my core, I'm an
+          idea generator, storyteller, and builder who believes that
+          experiences matter more than products. This space is where I
+          create meaningful experiences for real people, share my own
+          journey, and experiment with new ideas. I don't shy away from
+          getting my hands dirty, changing direction, or starting again —
+          it's all part of the process. From here, you can connect with me
+          or explore my work.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="about-cta-buttons">
+          <a href="#" class="cta-button linkedin-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="#" class="cta-button cv-button">Download My CV</a>
+          <a href="#" class="cta-button story-button">... or read my whole story?</a>
+        </div>
+      </div>
+      <div class="about-image-wrapper">
+        <img
+          src="https://i.ibb.co/gFhb47v5/DSC00424.jpg"
+          alt="Portrait of Maryam Akhyani"
+          class="about-image"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>My Work</h2>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <a
+          href="/blog/analytics"
+          class="project-card"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+            alt="Analytics dashboard screenshot"
+          />
+          <div class="project-card-content">
+            <h3>Analytics Platform Redesign</h3>
+            <p class="project-excerpt">
+              Led the complete redesign of our analytics platform, improving data visualization and user experience for 10,000+ users.
+            </p>
+            <div class="tags">
+              <span class="tag">Product Strategy</span>
+              <span class="tag">UX Research</span>
+              <span class="tag">Data Analysis</span>
+            </div>
+          </div>
+        </a>
+        <!-- Project 2 -->
+        <a
+          href="/blog/mobile-app"
+          class="project-card"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1000&auto=format&fit=crop"
+            alt="People collaborating around a laptop"
+          />
+          <div class="project-card-content">
+            <h3>Mobile App Launch</h3>
+            <p class="project-excerpt">
+              Spearheaded the launch of our first mobile application, coordinating across design, engineering, and marketing teams.
+            </p>
+            <div class="tags">
+              <span class="tag">Go-to-Market</span>
+              <span class="tag">Agile Methodologies</span>
+              <span class="tag">User Testing</span>
+            </div>
+          </div>
+        </a>
+        <!-- Project 3 -->
+        <a
+          href="/blog/design-system"
+          class="project-card"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=1000&auto=format&fit=crop"
+            alt="UI design wireframes on a desk"
+          />
+          <div class="project-card-content">
+            <h3>Design System Implementation</h3>
+            <p class="project-excerpt">
+              Created and rolled out a comprehensive design system, reducing development time by 40% and ensuring consistency.
+            </p>
+            <div class="tags">
+              <span class="tag">Design Systems</span>
+              <span class="tag">Stakeholder Mngmt</span>
+            </div>
+          </div>
+        </a>
+        <!-- Project 4 -->
+        <a
+          href="/blog/ab-testing"
+          class="project-card"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1000&auto=format&fit=crop"
+            alt="Office meeting with a presentation"
+          />
+          <div class="project-card-content">
+            <h3>A/B Testing Framework</h3>
+            <p class="project-excerpt">
+              Established a data-driven experimentation framework that enabled rapid iteration and increased conversion rates by 25%.
+            </p>
+            <div class="tags">
+              <span class="tag">Experimentation</span>
+              <span class="tag">Product Growth</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p>
+        I'm always excited to connect with fellow creators and innovators.
+        Whether you have a question, a project idea, or just want to say
+        hello, feel free to reach out.
+      </p>
+      <a href="mailto:hello@maryam.design" class="contact-button">Say Hello</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* --- Hero Section --- */
+  #home {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-cream);
+    background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+    padding: 1rem;
+    position: relative;
+  }
+
+  #home h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 0;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1001;
+  }
+
+  #home h1::before {
+    content: "Maryam";
+    display: block;
+    font-size: 5rem;
+    line-height: 1;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+    will-change: font-size, transform;
+    transition-delay: 0s;
+  }
+
+  #home h1::after {
+    content: "Akhyani";
+    display: block;
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-top: -0.05em;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+    will-change: font-size, transform;
+    transition-delay: 0.05s;
+    padding-bottom: 0.1em;
+  }
+
+  #home .subtitle,
+  #home .tagline {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+  }
+
+  #home .tagline {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  /* --- Scrolled 'Logo' State --- */
+  :global(body.scrolled-past) #home h1 {
+    position: fixed;
+    top: 1.5rem;
+    left: 3rem;
+    font-size: 0;
+    transform: translateY(0);
+    color: var(--text-dark);
+  }
+
+  :global(body.scrolled-past) #home h1::before {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #d4af37;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  :global(body.scrolled-past) #home h1::after {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin-top: -0.05em;
+    color: #d4af37;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+    padding-bottom: 0.1em;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  :global(body.scrolled-past) #home h1::before,
+  :global(body.scrolled-past) #home h1::after {
+    color: #d4af37;
+  }
+
+  :global(body.scrolled-further) #home h1::before,
+  :global(body.scrolled-further) #home h1::after {
+    color: var(--primary-orange);
+  }
+
+  :global(body.scrolled-past) #home .subtitle,
+  :global(body.scrolled-past) #home .tagline {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+    pointer-events: none;
+    transition-delay: 0.1s;
+  }
+
+  /* --- About Section --- */
+  #about .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  #about .about-text {
+    flex: 2;
+  }
+
+  #about .about-image-wrapper {
+    flex: 1;
+    position: relative;
+  }
+
+  #about .about-image {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    transform: rotate(-4deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 5px solid var(--white);
+  }
+
+  #about .about-image:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .about-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .cv-button {
+    background: var(--primary-orange);
+    color: var(--white);
+    border-color: var(--primary-orange);
+  }
+
+  .cv-button:hover {
+    background: #c35a1f;
+    border-color: #c35a1f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 109, 43, 0.3);
+  }
+
+  .linkedin-button {
+    background: #0077b5;
+    color: var(--white);
+    border-color: #0077b5;
+    padding: 0.875rem;
+    min-width: auto;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .linkedin-button:hover {
+    background: #005885;
+    border-color: #005885;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+  }
+
+  .story-button {
+    background: transparent;
+    color: var(--text-dark);
+    border-color: var(--primary-orange);
+  }
+
+  .story-button:hover {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 109, 43, 0.3);
+  }
+
+  :global(body.dark-mode) .cv-button {
+    background: var(--primary-orange);
+    color: var(--white);
+    border-color: var(--primary-orange);
+  }
+
+  :global(body.dark-mode) .cv-button:hover {
+    background: #e67e22;
+    border-color: #e67e22;
+  }
+
+  :global(body.dark-mode) .linkedin-button {
+    background: #0077b5;
+    color: var(--white);
+    border-color: #0077b5;
+  }
+
+  :global(body.dark-mode) .linkedin-button:hover {
+    background: #005885;
+    border-color: #005885;
+  }
+
+  :global(body.dark-mode) .story-button {
+    background: transparent;
+    color: var(--text-dark);
+    border-color: var(--primary-orange);
+  }
+
+  :global(body.dark-mode) .story-button:hover {
+    background: var(--primary-orange);
+    color: var(--white);
+  }
+
+  /* --- Projects Section --- */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardFadeIn 0.6s ease-out forwards;
+  }
+
+  .project-card:nth-child(1) { animation-delay: 0.1s; }
+  .project-card:nth-child(2) { animation-delay: 0.2s; }
+  .project-card:nth-child(3) { animation-delay: 0.3s; }
+  .project-card:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes cardFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .project-card-content {
+    padding: 1.5rem;
+  }
+
+  .project-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card .tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-card .tag {
+    background-color: var(--light-bg);
+    color: var(--primary-orange);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .project-excerpt {
+    position: relative;
+    min-height: 1.5rem;
+  }
+
+  /* --- Contact Section --- */
+  #contact .container {
+    text-align: center;
+  }
+
+  #contact p {
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .contact-button {
+    display: inline-block;
+    background: var(--primary-orange);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .contact-button:hover {
+    background: #c35a1f;
+    transform: translateY(-3px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    :global(body.scrolled-past) #home h1 {
+      left: 1rem;
+    }
+
+    :global(body.scrolled-past) #home h1::before,
+    :global(body.scrolled-past) #home h1::after {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #home h1::before,
+    #home h1::after {
+      font-size: 3rem;
+    }
+
+    #home .subtitle {
+      font-size: 1.25rem;
+    }
+
+    #home .tagline {
+      font-size: 1rem;
+    }
+
+    #about .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #about .about-image {
+      margin: 0 auto;
+    }
+
+    .about-cta-buttons {
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      min-width: 120px;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    :global(body.scrolled-past) #home h1 {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+</style>
