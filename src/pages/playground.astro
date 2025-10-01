@@ -14,8 +14,15 @@ import Layout from '../layouts/Layout.astro';
       <h1>Playground</h1>
       <div class="filter-dropdown">
         <button class="filter-toggle" id="filterToggle" aria-label="Filter projects">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 5h16M5 10h10M8 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"></polygon>
           </svg>
         </button>
         <div class="filter-menu" id="filterMenu"></div>
@@ -26,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="playground-content">
       <div class="playground-grid">
         <!-- Grid Item 1 - Mountain Landscape -->
-        <div class="grid-item">
+        <a href="/playground/mountain-dawn" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop"
             alt="Mountain landscape at sunrise"
@@ -36,10 +43,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Mountain Dawn</h3>
             <p>Capturing the first light</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 2 - Urban Architecture -->
-        <div class="grid-item">
+        <a href="/playground/urban-lines" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1000&auto=format&fit=crop"
             alt="Modern architectural design"
@@ -49,10 +56,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Urban Lines</h3>
             <p>Geometry in the city</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 3 - Portrait Study -->
-        <div class="grid-item">
+        <a href="/playground/natural-light" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
             alt="Portrait of a woman"
@@ -62,10 +69,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Natural Light</h3>
             <p>Authentic moments captured</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 4 - Food Photography -->
-        <div class="grid-item">
+        <a href="/playground/culinary-art" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop"
             alt="Gourmet dish"
@@ -75,10 +82,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Culinary Art</h3>
             <p>Taste through the lens</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 5 - Interior Design -->
-        <div class="grid-item">
+        <a href="/playground/minimal-space" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=1000&auto=format&fit=crop"
             alt="Modern interior space"
@@ -88,10 +95,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Minimal Space</h3>
             <p>Less is more</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 6 - Wildlife -->
-        <div class="grid-item">
+        <a href="/playground/wild-moments" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=1000&auto=format&fit=crop"
             alt="Wildlife in nature"
@@ -101,10 +108,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Wild Moments</h3>
             <p>Nature's untamed beauty</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 7 - Street Photography -->
-        <div class="grid-item">
+        <a href="/playground/city-life" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=1000&auto=format&fit=crop"
             alt="Street scene"
@@ -114,10 +121,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>City Life</h3>
             <p>Stories of the street</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 8 - Abstract Art -->
-        <div class="grid-item">
+        <a href="/playground/color-theory" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000&auto=format&fit=crop"
             alt="Abstract colorful patterns"
@@ -127,10 +134,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Color Theory</h3>
             <p>Beyond the visible</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 9 - Nature Close-up -->
-        <div class="grid-item">
+        <a href="/playground/bloom" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1000&auto=format&fit=crop"
             alt="Flower in bloom"
@@ -140,10 +147,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Bloom</h3>
             <p>Life in full color</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 10 - Architectural Detail -->
-        <div class="grid-item">
+        <a href="/playground/structural-beauty" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1000&auto=format&fit=crop"
             alt="Building details"
@@ -153,10 +160,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Structural Beauty</h3>
             <p>Form and function united</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 11 - Landscape Vista -->
-        <div class="grid-item">
+        <a href="/playground/horizon-lines" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1000&auto=format&fit=crop"
             alt="Scenic landscape"
@@ -166,10 +173,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Horizon Lines</h3>
             <p>Where earth meets sky</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 12 - Interior Details -->
-        <div class="grid-item">
+        <a href="/playground/cozy-corner" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop"
             alt="Interior corner detail"
@@ -179,10 +186,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Cozy Corner</h3>
             <p>Spaces that embrace</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 13 - Ocean Waves -->
-        <div class="grid-item">
+        <a href="/playground/endless-motion" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=1000&auto=format&fit=crop"
             alt="Ocean waves"
@@ -192,10 +199,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Endless Motion</h3>
             <p>The ocean's eternal dance</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 14 - Vintage Car -->
-        <div class="grid-item">
+        <a href="/playground/classic-elegance" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1000&auto=format&fit=crop"
             alt="Classic vintage car"
@@ -205,10 +212,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Classic Elegance</h3>
             <p>Timeless design meets modern lens</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 15 - Botanical Close-up -->
-        <div class="grid-item">
+        <a href="/playground/natural-geometry" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1000&auto=format&fit=crop"
             alt="Botanical detail"
@@ -218,10 +225,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Natural Geometry</h3>
             <p>Discovering patterns in nature</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 16 - Digital Art -->
-        <div class="grid-item">
+        <a href="/playground/pixel-perfect" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1000&auto=format&fit=crop"
             alt="Digital art creation"
@@ -231,10 +238,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Pixel Perfect</h3>
             <p>Where technology meets creativity</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 17 - Forest Path -->
-        <div class="grid-item">
+        <a href="/playground/woodland-trail" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=1000&auto=format&fit=crop"
             alt="Forest pathway"
@@ -244,10 +251,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Woodland Trail</h3>
             <p>Journey into nature's heart</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 18 - City Skyline -->
-        <div class="grid-item">
+        <a href="/playground/metropolitan-dreams" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=1000&auto=format&fit=crop"
             alt="City skyline at dusk"
@@ -257,10 +264,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Metropolitan Dreams</h3>
             <p>Urban landscapes painted with light</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 19 - Texture Study -->
-        <div class="grid-item">
+        <a href="/playground/surface-stories" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=80&w=1000&auto=format&fit=crop"
             alt="Textural surface detail"
@@ -270,10 +277,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Surface Stories</h3>
             <p>Finding beauty in the everyday</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 20 - Aerial View -->
-        <div class="grid-item">
+        <a href="/playground/birds-eye-view" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1000&auto=format&fit=crop"
             alt="Aerial landscape view"
@@ -283,10 +290,10 @@ import Layout from '../layouts/Layout.astro';
             <h3>Bird's Eye View</h3>
             <p>Perspective from above</p>
           </div>
-        </div>
+        </a>
 
         <!-- Grid Item 21 - Fashion Portrait -->
-        <div class="grid-item">
+        <a href="/playground/style-statement" class="grid-item">
           <img
             src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1000&auto=format&fit=crop"
             alt="Fashion portrait"
@@ -296,7 +303,7 @@ import Layout from '../layouts/Layout.astro';
             <h3>Style Statement</h3>
             <p>Where fashion meets fine art</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </main>
@@ -357,45 +364,80 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .filter-toggle {
-    background: var(--white);
-    border: 2px solid var(--primary-orange);
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(61, 53, 46, 0.15);
+    border-radius: 8px;
+    color: rgba(61, 53, 46, 0.6);
     cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--primary-orange);
-    box-shadow: 0 2px 10px rgba(217, 109, 43, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
   }
 
   .filter-toggle:hover {
-    background: var(--primary-orange);
-    color: var(--white);
-    transform: rotate(90deg);
+    background: rgba(61, 53, 46, 0.05);
+    border-color: rgba(61, 53, 46, 0.25);
+    color: var(--primary-orange);
+    transform: translateY(-1px);
   }
 
   .filter-toggle.active {
     background: var(--primary-orange);
+    border-color: var(--primary-orange);
     color: var(--white);
-    transform: rotate(90deg);
+  }
+
+  .filter-toggle svg {
+    transition: all 0.2s ease;
+  }
+
+  .filter-toggle:hover svg {
+    transform: scale(1.1);
+  }
+
+  .filter-toggle::after {
+    content: "Filter";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+  }
+
+  .filter-toggle:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-2px);
   }
 
   .filter-menu {
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 8px);
     right: 0;
+    min-width: 180px;
+    max-width: 220px;
     background: var(--white);
-    border: 2px solid var(--primary-orange);
-    border-radius: 12px;
-    min-width: 200px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(61, 53, 46, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+    z-index: 100;
     overflow: hidden;
   }
 
@@ -405,36 +447,40 @@ import Layout from '../layouts/Layout.astro';
     transform: translateY(0);
   }
 
-  .filter-option {
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: var(--text-dark);
-    font-size: 0.95rem;
+  :global(.filter-option) {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(217, 109, 43, 0.1);
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    transition: background-color 0.15s ease;
+    border-bottom: 1px solid rgba(61, 53, 46, 0.06);
   }
 
-  .filter-option:last-child {
+  :global(.filter-option:last-child) {
     border-bottom: none;
   }
 
-  .filter-option:hover {
-    background: rgba(217, 109, 43, 0.05);
-    padding-left: 25px;
+  :global(.filter-option:hover) {
+    background: rgba(217, 109, 43, 0.06);
   }
 
-  .filter-option.active {
-    background: var(--primary-orange);
-    color: var(--white);
-    font-weight: 600;
+  :global(.filter-option.active) {
+    background: rgba(217, 109, 43, 0.1);
+    color: var(--primary-orange);
+    font-weight: 500;
   }
 
-  .filter-option .count {
-    font-size: 0.85rem;
-    opacity: 0.7;
+  :global(.filter-option .count) {
+    font-size: 0.75rem;
+    color: rgba(61, 53, 46, 0.5);
+    font-weight: 400;
+  }
+
+  :global(.filter-option.active .count) {
+    color: var(--primary-orange);
   }
 
   /* Playground Content */
@@ -455,12 +501,16 @@ import Layout from '../layouts/Layout.astro';
   /* Grid Items */
   .grid-item {
     position: relative;
+    display: block;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--white);
     aspect-ratio: 4/3;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   .grid-item.hidden {
@@ -562,8 +612,18 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .filter-toggle {
-      width: 42px;
-      height: 42px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .filter-toggle svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .filter-menu {
+      min-width: 160px;
+      max-width: 200px;
     }
 
     .playground-header h1 {
@@ -611,6 +671,51 @@ import Layout from '../layouts/Layout.astro';
       width: 15px;
       height: 15px;
     }
+
+    .filter-menu {
+      min-width: 140px;
+      max-width: 180px;
+      right: -20px;
+    }
+
+    .filter-option {
+      padding: 0.6rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .filter-toggle::after {
+      display: none;
+    }
+  }
+
+  /* Dark mode adjustments */
+  :global(body.dark-mode) .filter-toggle {
+    border-color: rgba(233, 226, 217, 0.15);
+    color: rgba(233, 226, 217, 0.6);
+  }
+
+  :global(body.dark-mode) .filter-toggle:hover {
+    background: rgba(233, 226, 217, 0.05);
+    border-color: rgba(233, 226, 217, 0.25);
+  }
+
+  :global(body.dark-mode) .filter-menu {
+    background: var(--white);
+    border-color: rgba(233, 226, 217, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  :global(body.dark-mode .filter-option) {
+    color: var(--text-dark);
+    border-color: rgba(233, 226, 217, 0.06);
+  }
+
+  :global(body.dark-mode .filter-option:hover) {
+    background: rgba(217, 109, 43, 0.08);
+  }
+
+  :global(body.dark-mode .filter-option .count) {
+    color: rgba(233, 226, 217, 0.5);
   }
 </style>
 
