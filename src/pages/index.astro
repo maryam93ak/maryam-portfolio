@@ -322,10 +322,23 @@ import Layout from '../layouts/Layout.astro';
     
     #about .about-text {
       flex: 2;
+      align-self: center;
     }
     
     #about .about-image-wrapper {
       flex: 1;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Reset mobile order properties for desktop */
+    #about h2,
+    #about .about-content,
+    #about .about-text,
+    #about .about-image-wrapper {
+      order: unset;
     }
   }
 
