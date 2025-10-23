@@ -294,12 +294,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- About Section --- */
-  #about .container {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-
   #about h2 {
     font-family: "Playfair Display", serif;
     font-size: 2.5rem;
@@ -308,29 +302,45 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 2rem;
   }
 
-  /* Desktop: wrap title and text together */
+  /* Desktop layout */
   @media (min-width: 769px) {
     #about .container {
       display: block;
     }
     
+    #about h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    
     #about .about-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 3rem;
+      min-height: 400px;
     }
     
     #about .about-text {
       flex: 2;
-      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
     #about .about-image-wrapper {
       flex: 1;
-      align-self: center;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100%;
+      position: static;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #about .about-image {
+      margin: 0;
+      display: block;
     }
     
     /* Reset mobile order properties for desktop */
