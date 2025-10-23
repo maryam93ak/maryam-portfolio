@@ -161,6 +161,15 @@ const { title, description, date, category, heroImage, heroAlt } = Astro.props;
     opacity: 0.9;
   }
 
+  .blog-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin: 1.5rem 0;
+    display: block;
+  }
+
   /* Responsive Design */
   @media (max-width: 1024px) {
     .logo {
