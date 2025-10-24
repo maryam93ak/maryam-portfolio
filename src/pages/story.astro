@@ -7,6 +7,9 @@ import Layout from '../layouts/Layout.astro';
   description="The journey from architecture to product management - a story of curiosity, design thinking, and human-centered innovation."
   currentPath="/story"
 >
+  <!-- Logo -->
+  <a href="/" class="logo" title="Maryam Akhyani"></a>
+
   <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
@@ -96,6 +99,57 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* Logo Styles */
+  .logo {
+    position: fixed;
+    top: 1.5rem;
+    left: 3rem;
+    z-index: 1001;
+    font-family: "Playfair Display", serif;
+    font-size: 0;
+    font-weight: 400;
+    text-decoration: none;
+    color: #d96d2b;
+    transition: all 0.3s ease;
+  }
+
+  .logo::before {
+    content: "Maryam";
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    transform-origin: center center;
+  }
+
+  .logo::after {
+    content: "Akhyani";
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin-top: -0.05em;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    transform-origin: center center;
+    padding-bottom: 0.1em;
+  }
+
+  .logo:hover {
+    color: var(--primary-orange);
+    transform: scale(1.05);
+  }
+
+  :global(body.dark-mode) .logo {
+    color: #d4af37;
+  }
+
+  :global(body.dark-mode) .logo:hover {
+    color: var(--primary-orange);
+  }
+
   /* --- Timeline Section --- */
   .timeline-section {
     padding: 8rem 0 4rem 0;
@@ -361,7 +415,31 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Responsive Design --- */
+  @media (max-width: 1024px) {
+    .logo {
+      left: 1rem;
+    }
+
+    .logo::before,
+    .logo::after {
+      font-size: 1rem;
+    }
+  }
+
   @media (max-width: 768px) {
+    .logo {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    :global(body.dark-mode) .logo {
+      background: rgba(45, 40, 36, 0.95);
+    }
+
     .timeline-section {
       padding: 6rem 0 4rem 0;
     }
