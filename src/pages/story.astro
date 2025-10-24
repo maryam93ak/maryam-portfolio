@@ -13,6 +13,11 @@ import Layout from '../layouts/Layout.astro';
   <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-text">Scroll to explore my journey</div>
+        <div class="scroll-arrow">↓</div>
+      </div>
       <div class="timeline">
         
         <!-- Timeline Item 1: The Leap to Canada -->
@@ -155,6 +160,51 @@ import Layout from '../layouts/Layout.astro';
     padding: 8rem 0 4rem 0;
     background: var(--light-bg);
     min-height: 100vh;
+    position: relative;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+
+  .scroll-indicator.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scroll-text {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .scroll-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
   }
 
   .container {
@@ -205,6 +255,13 @@ import Layout from '../layouts/Layout.astro';
     transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
+  /* Preview state for timeline items below the fold */
+  .timeline-item.preview {
+    opacity: 0.3;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
   .timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
@@ -248,6 +305,12 @@ import Layout from '../layouts/Layout.astro';
     transform: scale(1);
   }
 
+  /* Preview state for markers */
+  .timeline-item.preview .timeline-marker {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+
   /* Content - no background card, just text */
   .timeline-content {
     padding: 0;
@@ -269,6 +332,12 @@ import Layout from '../layouts/Layout.astro';
 
   .timeline-item.visible .timeline-content h3 {
     opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Preview state for headings */
+  .timeline-item.preview .timeline-content h3 {
+    opacity: 0.4;
     transform: translateX(0);
   }
 
@@ -294,6 +363,12 @@ import Layout from '../layouts/Layout.astro';
   /* Staggered fade-in for list items */
   .timeline-item.visible .timeline-content li {
     opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Preview state for list items */
+  .timeline-item.preview .timeline-content li {
+    opacity: 0.2;
     transform: translateX(0);
   }
 
@@ -444,6 +519,18 @@ import Layout from '../layouts/Layout.astro';
       padding: 6rem 0 4rem 0;
     }
 
+    .scroll-indicator {
+      right: 1rem;
+    }
+
+    .scroll-text {
+      font-size: 0.75rem;
+    }
+
+    .scroll-arrow {
+      font-size: 1.25rem;
+    }
+
     .timeline {
       padding-left: 60px;
       padding-top: 20px;
@@ -513,6 +600,27 @@ import Layout from '../layouts/Layout.astro';
   // Intersection Observer for smooth scroll-based fade-in animations
   document.addEventListener('DOMContentLoaded', function() {
     const timelineItems = document.querySelectorAll('.timeline-item');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    
+    // Set initial preview state for items below the fold
+    function setInitialPreviewStates() {
+      const viewportHeight = window.innerHeight;
+      const firstItem = timelineItems[0];
+      
+      if (firstItem) {
+        const firstItemRect = firstItem.getBoundingClientRect();
+        const firstItemBottom = firstItemRect.bottom;
+        
+        // If first item doesn't fill the viewport, show preview of other items
+        if (firstItemBottom < viewportHeight * 0.8) {
+          timelineItems.forEach((item, index) => {
+            if (index > 0) {
+              item.classList.add('preview');
+            }
+          });
+        }
+      }
+    }
     
     // Create an intersection observer with optimized settings for smooth animations
     const observer = new IntersectionObserver((entries) => {
@@ -520,8 +628,16 @@ import Layout from '../layouts/Layout.astro';
         // Add 'visible' class when element enters viewport
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // Optional: Stop observing once animated (performance optimization)
-          // observer.unobserve(entry.target);
+          entry.target.classList.remove('preview');
+        } else {
+          // Add preview state for items that are below the fold
+          const rect = entry.target.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+          
+          if (rect.top > viewportHeight * 0.5) {
+            entry.target.classList.add('preview');
+            entry.target.classList.remove('visible');
+          }
         }
       });
     }, {
@@ -531,9 +647,35 @@ import Layout from '../layouts/Layout.astro';
       rootMargin: '0px 0px -100px 0px'
     });
 
+    // Handle scroll indicator visibility
+    function handleScrollIndicator() {
+      if (scrollIndicator) {
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        
+        // Hide scroll indicator after user has scrolled down a bit
+        if (scrollY > viewportHeight * 0.3) {
+          scrollIndicator.classList.add('hidden');
+        } else {
+          scrollIndicator.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Set initial states
+    setInitialPreviewStates();
+    
     // Observe each timeline item
     timelineItems.forEach(item => {
       observer.observe(item);
+    });
+    
+    // Handle scroll events for indicator
+    window.addEventListener('scroll', handleScrollIndicator);
+    
+    // Handle resize events
+    window.addEventListener('resize', () => {
+      setInitialPreviewStates();
     });
   });
 </script>
