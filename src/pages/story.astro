@@ -10,17 +10,16 @@ import Layout from '../layouts/Layout.astro';
   <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
+      <!-- Page Title/Logo -->
+      <div class="page-header">
+        <h1>Maryam<br>Akhyani</h1>
+      </div>
+      
       <div class="timeline">
         
         <!-- Timeline Item 1: The Leap to Canada -->
         <div class="timeline-item">
-          <div class="timeline-marker">
-            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-          </div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3>The Leap to Canada – Redesigning a Career, Not Just a Resume</h3>
             <ul>
@@ -34,15 +33,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Timeline Item 2: Product Design to Product Management -->
         <div class="timeline-item">
-          <div class="timeline-marker">
-            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20"></path>
-              <path d="m15 5 3-3 3 3"></path>
-              <path d="M4 9l3-3 3 3"></path>
-              <path d="M4 14l3 3 3-3"></path>
-              <path d="m15 19 3 3 3-3"></path>
-            </svg>
-          </div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3>Product Design to Product Management – Where Logic Meets Empathy</h3>
             <ul>
@@ -62,18 +53,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Timeline Item 3: From Buildings to Experiences -->
         <div class="timeline-item">
-          <div class="timeline-marker">
-            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
-              <path d="m14 7 3 3"></path>
-              <path d="M5 6v4"></path>
-              <path d="M19 14v4"></path>
-              <path d="M10 2v2"></path>
-              <path d="M7 8H3"></path>
-              <path d="M21 16h-4"></path>
-              <path d="M11 3H9"></path>
-            </svg>
-          </div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3>From Buildings to Experiences – The Design Turn</h3>
             <ul>
@@ -87,13 +67,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Timeline Item 4: Early Roots -->
         <div class="timeline-item">
-          <div class="timeline-marker">
-            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22v-8"></path>
-              <path d="M12 14c4.5 0 8-3.5 8-8s-3.5-2-8-2-8-2-8 2 3.5 8 8 8z"></path>
-              <path d="M12 2v2"></path>
-            </svg>
-          </div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
             <h3>Early Roots – The Architect Who Saw Systems Beyond Buildings</h3>
             <ul>
@@ -140,6 +114,21 @@ import Layout from '../layouts/Layout.astro';
     padding: 0 2rem;
   }
 
+  /* Page Header/Logo */
+  .page-header {
+    margin-bottom: 4rem;
+    padding-left: 2rem;
+  }
+
+  .page-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+    line-height: 1.2;
+    margin: 0;
+  }
+
   .timeline {
     position: relative;
     max-width: 1000px;
@@ -152,11 +141,25 @@ import Layout from '../layouts/Layout.astro';
     content: '';
     position: absolute;
     left: 30px;
-    top: 0;
+    top: -60px;
     bottom: 0;
     width: 3px;
     background: var(--primary-orange);
     border-radius: 2px;
+  }
+
+  /* Upward arrow at the top of timeline */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    left: 31.5px;
+    top: -60px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid var(--primary-orange);
+    transform: translateX(-50%);
   }
 
   .timeline-item {
@@ -192,15 +195,12 @@ import Layout from '../layouts/Layout.astro';
   /* Circular marker on the timeline */
   .timeline-marker {
     position: absolute;
-    left: -70px;
+    left: -69px;
     top: 0;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: var(--primary-orange);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     /* Marker animation - starts scaled down */
@@ -211,19 +211,6 @@ import Layout from '../layouts/Layout.astro';
   /* Animate marker when parent timeline-item becomes visible */
   .timeline-item.visible .timeline-marker {
     transform: scale(1);
-  }
-
-  .marker-icon {
-    width: 28px;
-    height: 28px;
-    color: var(--white);
-    opacity: 0;
-    transition: opacity 0.4s ease 0.3s;
-  }
-
-  /* Fade in the icon after marker appears */
-  .timeline-item.visible .marker-icon {
-    opacity: 1;
   }
 
   /* Content - no background card, just text */
@@ -398,12 +385,29 @@ import Layout from '../layouts/Layout.astro';
       padding: 6rem 0 4rem 0;
     }
 
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-header h1 {
+      font-size: 1.5rem;
+    }
+
     .timeline {
       padding-left: 60px;
     }
 
     .timeline::before {
       left: 20px;
+      top: -40px;
+    }
+
+    .timeline::after {
+      left: 21.5px;
+      top: -40px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 12px solid var(--primary-orange);
     }
 
     .timeline-item {
@@ -414,11 +418,6 @@ import Layout from '../layouts/Layout.astro';
       width: 50px;
       height: 50px;
       left: -55px;
-    }
-
-    .marker-icon {
-      width: 24px;
-      height: 24px;
     }
 
     .timeline-content h3 {
