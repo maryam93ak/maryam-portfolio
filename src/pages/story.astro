@@ -100,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   /* Logo Styles */
-  .logo {
+  :global(.logo) {
     position: fixed;
     top: 1.5rem;
     left: 3rem;
@@ -113,7 +113,7 @@ import Layout from '../layouts/Layout.astro';
     transition: all 0.3s ease;
   }
 
-  .logo::before {
+  :global(.logo::before) {
     content: "Maryam";
     display: block;
     font-size: 1.2rem;
@@ -124,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
     transform-origin: center center;
   }
 
-  .logo::after {
+  :global(.logo::after) {
     content: "Akhyani";
     display: block;
     font-size: 1.2rem;
@@ -137,16 +137,16 @@ import Layout from '../layouts/Layout.astro';
     padding-bottom: 0.1em;
   }
 
-  .logo:hover {
+  :global(.logo:hover) {
     color: var(--primary-orange);
     transform: scale(1.05);
   }
 
-  :global(body.dark-mode) .logo {
+  :global(body.dark-mode .logo) {
     color: #d4af37;
   }
 
-  :global(body.dark-mode) .logo:hover {
+  :global(body.dark-mode .logo:hover) {
     color: var(--primary-orange);
   }
 
@@ -416,18 +416,18 @@ import Layout from '../layouts/Layout.astro';
 
   /* --- Responsive Design --- */
   @media (max-width: 1024px) {
-    .logo {
+    :global(.logo) {
       left: 1rem;
     }
 
-    .logo::before,
-    .logo::after {
+    :global(.logo::before),
+    :global(.logo::after) {
       font-size: 1rem;
     }
   }
 
   @media (max-width: 768px) {
-    .logo {
+    :global(.logo) {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 2rem;
       padding: 0.5rem 1.5rem;
@@ -436,7 +436,7 @@ import Layout from '../layouts/Layout.astro';
       -webkit-backdrop-filter: blur(10px);
     }
 
-    :global(body.dark-mode) .logo {
+    :global(body.dark-mode .logo) {
       background: rgba(45, 40, 36, 0.95);
     }
 
