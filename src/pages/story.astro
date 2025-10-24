@@ -7,15 +7,6 @@ import Layout from '../layouts/Layout.astro';
   description="The journey from architecture to product management - a story of curiosity, design thinking, and human-centered innovation."
   currentPath="/story"
 >
-  <!-- Hero Section -->
-  <header class="story-hero">
-    <div class="container">
-      <h1>My Story</h1>
-      <p class="story-subtitle">From Buildings to Experiences</p>
-      <p class="story-tagline">A journey through design, empathy, and human-centered innovation</p>
-    </div>
-  </header>
-
   <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
@@ -24,7 +15,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- Timeline Item 1: The Leap to Canada -->
         <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-marker">
-            <div class="marker-icon">🌍</div>
+            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
           </div>
           <div class="timeline-content">
             <h3>The Leap to Canada – Redesigning a Career, Not Just a Resume</h3>
@@ -40,7 +35,13 @@ import Layout from '../layouts/Layout.astro';
         <!-- Timeline Item 2: Product Design to Product Management -->
         <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-marker">
-            <div class="marker-icon">🚀</div>
+            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20"></path>
+              <path d="m15 5 3-3 3 3"></path>
+              <path d="M4 9l3-3 3 3"></path>
+              <path d="M4 14l3 3 3-3"></path>
+              <path d="m15 19 3 3 3-3"></path>
+            </svg>
           </div>
           <div class="timeline-content">
             <h3>Product Design to Product Management – Where Logic Meets Empathy</h3>
@@ -62,7 +63,16 @@ import Layout from '../layouts/Layout.astro';
         <!-- Timeline Item 3: From Buildings to Experiences -->
         <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-marker">
-            <div class="marker-icon">🎨</div>
+            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
+              <path d="m14 7 3 3"></path>
+              <path d="M5 6v4"></path>
+              <path d="M19 14v4"></path>
+              <path d="M10 2v2"></path>
+              <path d="M7 8H3"></path>
+              <path d="M21 16h-4"></path>
+              <path d="M11 3H9"></path>
+            </svg>
           </div>
           <div class="timeline-content">
             <h3>From Buildings to Experiences – The Design Turn</h3>
@@ -78,7 +88,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- Timeline Item 4: Early Roots -->
         <div class="timeline-item" data-aos="fade-up">
           <div class="timeline-marker">
-            <div class="marker-icon">🌱</div>
+            <svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22v-8"></path>
+              <path d="M12 14c4.5 0 8-3.5 8-8s-3.5-2-8-2-8-2-8 2 3.5 8 8 8z"></path>
+              <path d="M12 2v2"></path>
+            </svg>
           </div>
           <div class="timeline-content">
             <h3>Early Roots – The Architect Who Saw Systems Beyond Buildings</h3>
@@ -113,59 +127,11 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  /* --- Story Hero Section --- */
-  .story-hero {
-    background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-    color: var(--text-cream);
-    padding: 6rem 0 4rem 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .story-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
-  }
-
-  .story-hero .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  .story-hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 4rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .story-subtitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-  }
-
-  .story-tagline {
-    font-size: 1.25rem;
-    font-weight: 400;
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
   /* --- Timeline Section --- */
   .timeline-section {
-    padding: 4rem 0;
+    padding: 8rem 0 4rem 0;
     background: var(--light-bg);
+    min-height: 100vh;
   }
 
   .timeline {
@@ -216,7 +182,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .marker-icon {
-    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    color: var(--primary-orange);
   }
 
   .timeline-content {
@@ -346,16 +314,8 @@ import Layout from '../layouts/Layout.astro';
 
   /* --- Responsive Design --- */
   @media (max-width: 768px) {
-    .story-hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .story-subtitle {
-      font-size: 1.25rem;
-    }
-
-    .story-tagline {
-      font-size: 1rem;
+    .timeline-section {
+      padding: 6rem 0 4rem 0;
     }
 
     .timeline::before {
@@ -372,7 +332,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .marker-icon {
-      font-size: 1.25rem;
+      width: 20px;
+      height: 20px;
     }
 
     .timeline-content {
