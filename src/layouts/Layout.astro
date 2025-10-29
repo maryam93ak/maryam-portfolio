@@ -42,6 +42,13 @@ const { title, description, currentPath = "/" } = Astro.props;
     </footer>
 
     <script>
+      // Initialize Vercel Analytics
+      import('@vercel/analytics').then(({ inject }) => {
+        inject();
+      });
+    </script>
+
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll("section, header");
         const navLinks = document.querySelectorAll(".side-nav a, .bottom-nav a");
