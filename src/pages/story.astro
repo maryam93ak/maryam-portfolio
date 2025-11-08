@@ -237,7 +237,8 @@ import Layout from '../layouts/Layout.astro';
   .timeline::after {
     content: '';
     position: absolute;
-    left: 30px;
+    /* Center arrow on vertical line at 31.5px (30px + 1.5px center of 3px line) */
+    left: 31.5px;
     top: -15px;
     width: 0;
     height: 0;
@@ -287,7 +288,9 @@ import Layout from '../layouts/Layout.astro';
   /* Circular marker on the timeline */
   .timeline-marker {
     position: absolute;
-    left: -59px;
+    /* Center the marker on the vertical line at 31.5px (30px + 1.5px center of 3px line) */
+    /* Timeline padding-left is 100px, marker width is 50px, so: left edge at 31.5px - 100px - 25px = -93.5px */
+    left: -93.5px;
     top: 0;
     width: 50px;
     height: 50px;
@@ -542,7 +545,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .timeline::after {
-      left: 20px;
+      /* Center arrow on vertical line at 21.5px (20px + 1.5px center of 3px line) */
+      left: 21.5px;
       top: -15px;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
@@ -556,7 +560,10 @@ import Layout from '../layouts/Layout.astro';
     .timeline-marker {
       width: 20px;
       height: 20px;
-      left: -50px;
+      /* Center the marker on the vertical line at 21.5px (20px + 1.5px center of 3px line) */
+      /* Timeline padding-left is 60px, marker width is 20px, so: left edge at 21.5px - 60px - 10px = -48.5px */
+      left: -48.5px;
+      transform: scale(0);
     }
 
     .timeline-content h3 {
