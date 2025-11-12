@@ -395,8 +395,12 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  /* Prevent overlap with navigation */
-  #about-me,
+  /* Prevent overlap with navigation and hero section */
+  /* Note: #about-me scroll offset is handled by JavaScript in Layout.astro */
+  #about-me {
+    scroll-margin-top: 2rem;
+  }
+
   #my-work {
     scroll-margin-top: 2rem;
   }

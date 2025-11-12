@@ -139,11 +139,24 @@ const { title, description, currentPath = "/" } = Astro.props;
             e.preventDefault();
             const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
             if (href) {
-              const target = document.querySelector(href);
+              const target = document.querySelector(href) as HTMLElement;
               if (target) {
-                target.scrollIntoView({
-                  behavior: "smooth",
-                });
+                // Special handling for #about-me to scroll past hero section
+                if (href === "#about-me") {
+                  const hero = document.getElementById("home") as HTMLElement;
+                  const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+                  const targetTop = target.offsetTop;
+                  const scrollPosition = targetTop - heroHeight - 32; // 32px = 2rem extra space
+                  
+                  window.scrollTo({
+                    top: scrollPosition,
+                    behavior: "smooth",
+                  });
+                } else {
+                  target.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }
               }
             }
           });
