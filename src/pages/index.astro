@@ -12,10 +12,16 @@ import Layout from '../layouts/Layout.astro';
     <h1>Maryam Akhyani</h1>
     <p class="subtitle">Software Product Manager</p>
     <p class="tagline">Bridging creativity, empathy, and execution</p>
+    
+    <!-- Hero CTAs -->
+    <div class="hero-ctas">
+      <a href="#my-work" class="btn btn-primary">View My Work</a>
+      <a href="#about-me" class="btn btn-secondary">Learn More About Me ↓</a>
+    </div>
   </header>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about-me">
     <div class="container">
       <h2>About Me</h2>
       <div class="about-content">
@@ -62,7 +68,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="my-work">
     <div class="container">
       <h2>My Work</h2>
       <div class="project-grid">
@@ -266,6 +272,67 @@ import Layout from '../layouts/Layout.astro';
     font-family: "Inter", sans-serif;
     font-size: 1.25rem;
     font-weight: 400;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Hero CTAs - Matching design system */
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 140px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--text-cream);
+    outline-offset: 3px;
+  }
+
+  /* Primary button - white background with orange text (inverted for hero) */
+  .btn-primary {
+    background: var(--white);
+    color: var(--primary-orange);
+    border-color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: var(--text-cream);
+    color: var(--primary-orange);
+    border-color: var(--text-cream);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Secondary button - transparent with white border (matching story-button pattern) */
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-cream);
+    border-color: var(--text-cream);
+  }
+
+  .btn-secondary:hover {
+    background: var(--text-cream);
+    color: var(--primary-orange);
+    border-color: var(--text-cream);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   /* --- Scrolled 'Logo' State --- */
@@ -309,15 +376,54 @@ import Layout from '../layouts/Layout.astro';
   }
 
   :global(body.scrolled-past) #home .subtitle,
-  :global(body.scrolled-past) #home .tagline {
+  :global(body.scrolled-past) #home .tagline,
+  :global(body.scrolled-past) #home .hero-ctas {
     opacity: 0;
     transform: translateY(-30px) scale(0.95);
     pointer-events: none;
     transition-delay: 0.1s;
   }
 
+  /* Smooth scrolling with reduced motion support */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Prevent overlap with navigation */
+  #about-me,
+  #my-work {
+    scroll-margin-top: 2rem;
+  }
+
+  /* Section highlight animation */
+  .section-highlight {
+    animation: sectionFade 700ms ease-out;
+    background: radial-gradient(1200px 200px at 50% 0%, rgba(255, 255, 255, 0.18), transparent 70%);
+  }
+
+  @keyframes sectionFade {
+    from {
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-highlight {
+      animation: none;
+    }
+  }
+
   /* --- About Section --- */
-  #about h2 {
+  #about-me h2 {
     font-family: "Playfair Display", serif;
     font-size: 2.5rem;
     font-weight: 400;
@@ -327,26 +433,26 @@ import Layout from '../layouts/Layout.astro';
 
   /* Desktop layout */
   @media (min-width: 769px) {
-    #about .container {
+    #about-me .container {
       display: block;
     }
     
-    #about h2 {
+    #about-me h2 {
       text-align: left;
       margin-bottom: 2rem;
     }
     
-    #about .about-content {
+    #about-me .about-content {
       display: flex;
       align-items: flex-start;
       gap: 3rem;
     }
     
-    #about .about-text {
+    #about-me .about-text {
       flex: 2;
     }
     
-    #about .about-image-wrapper {
+    #about-me .about-image-wrapper {
       flex: 1;
       display: flex;
       justify-content: center;
@@ -357,29 +463,29 @@ import Layout from '../layouts/Layout.astro';
       padding-top: 2rem;
     }
     
-    #about .about-image {
+    #about-me .about-image {
       margin: 0;
       display: block;
     }
     
     /* Reset mobile order properties for desktop */
-    #about h2,
-    #about .about-content,
-    #about .about-text,
-    #about .about-image-wrapper {
+    #about-me h2,
+    #about-me .about-content,
+    #about-me .about-text,
+    #about-me .about-image-wrapper {
       order: unset;
     }
   }
 
-  #about .about-text p {
+  #about-me .about-text p {
     text-align: justify;
   }
 
-  #about .about-image-wrapper {
+  #about-me .about-image-wrapper {
     position: relative;
   }
 
-  #about .about-image {
+  #about-me .about-image {
     width: 100%;
     max-width: 280px;
     border-radius: 12px;
@@ -389,7 +495,7 @@ import Layout from '../layouts/Layout.astro';
     border: 5px solid var(--white);
   }
 
-  #about .about-image:hover {
+  #about-me .about-image:hover {
     transform: rotate(0deg) scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
@@ -618,37 +724,37 @@ import Layout from '../layouts/Layout.astro';
       font-size: 1rem;
     }
 
-    #about .container {
+    #about-me .container {
       display: flex;
       flex-direction: column;
       text-align: center;
     }
 
-    #about .about-content {
+    #about-me .about-content {
       display: flex;
       flex-direction: column;
     }
 
     /* Control the visual order on mobile */
-    #about h2 {
+    #about-me h2 {
       order: 1; /* Title first */
       margin-bottom: 1.5rem;
     }
 
-    #about .about-content {
+    #about-me .about-content {
       order: 2;
     }
 
-    #about .about-image-wrapper {
+    #about-me .about-image-wrapper {
       order: 1; /* Image first within about-content */
       margin-bottom: 2rem;
     }
 
-    #about .about-text {
+    #about-me .about-text {
       order: 2; /* Text and buttons second within about-content */
     }
 
-    #about .about-image {
+    #about-me .about-image {
       margin: 0 auto;
     }
 
@@ -675,5 +781,63 @@ import Layout from '../layouts/Layout.astro';
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
+
+    .hero-ctas {
+      gap: 0.75rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+      min-width: 120px;
+    }
   }
 </style>
+
+<script>
+  (function () {
+    // Function to highlight a section when arriving via anchor link
+    function highlight(target: HTMLElement | null) {
+      if (!target) return;
+      target.classList.add('section-highlight');
+      setTimeout(() => target.classList.remove('section-highlight'), 800);
+    }
+
+    // Highlight when arriving via hash change
+    window.addEventListener('hashchange', () => {
+      const el = document.querySelector(location.hash) as HTMLElement | null;
+      if (el) highlight(el);
+    });
+
+    // Also highlight if page loads with a hash
+    window.addEventListener('DOMContentLoaded', () => {
+      if (location.hash) {
+        const el = document.querySelector(location.hash) as HTMLElement | null;
+        if (el) {
+          // Small delay to ensure scroll completes
+          setTimeout(() => highlight(el), 100);
+        }
+      }
+    });
+
+    // Ensure keyboard focus moves to section heading for accessibility
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        // Small delay to let scroll finish
+        setTimeout(() => {
+          const focusable = (target.querySelector('h1, h2, h3, [tabindex="-1"]') || target) as HTMLElement;
+          if (focusable) {
+            focusable.setAttribute('tabindex', '-1');
+            focusable.focus({ preventScroll: true });
+          }
+        }, 450);
+      });
+    });
+  })();
+</script>
