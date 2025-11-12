@@ -134,33 +134,59 @@ const { title, description, currentPath = "/" } = Astro.props;
         window.addEventListener("scroll", onScroll, { passive: true });
 
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e: Event) {
-            e.preventDefault();
-            const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
-            if (href) {
-              const target = document.querySelector(href) as HTMLElement;
-              if (target) {
+        // Use event delegation to ensure it works even if elements are added dynamically
+        document.addEventListener("click", function (e: Event) {
+          const target = e.target as HTMLElement;
+          const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement;
+          
+          if (anchor) {
+            const href = anchor.getAttribute("href");
+            if (href && href !== "#") {
+              e.preventDefault();
+              e.stopPropagation();
+              
+              const targetSection = document.querySelector(href) as HTMLElement;
+              if (targetSection) {
+                // Update URL hash without triggering scroll
+                history.pushState(null, '', href);
+                
                 // Special handling for #about-me to scroll past hero section
                 if (href === "#about-me") {
                   const hero = document.getElementById("home") as HTMLElement;
-                  const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
-                  const targetTop = target.offsetTop;
-                  const scrollPosition = targetTop - heroHeight - 32; // 32px = 2rem extra space
-                  
-                  window.scrollTo({
-                    top: scrollPosition,
-                    behavior: "smooth",
-                  });
+                  if (hero) {
+                    const heroHeight = hero.offsetHeight;
+                    // Get the absolute position of the target section from the top of the document
+                    let targetTop = 0;
+                    let element: HTMLElement | null = targetSection;
+                    while (element) {
+                      targetTop += element.offsetTop;
+                      element = element.offsetParent as HTMLElement | null;
+                    }
+                    // Scroll to the start of the section (targetTop) which is already past the hero
+                    // Add a small offset to ensure the hero is completely scrolled past
+                    const scrollPosition = targetTop - 48; // 48px = 3rem spacing from top
+                    
+                    window.scrollTo({
+                      top: Math.max(heroHeight, scrollPosition), // Ensure we scroll past the hero at minimum
+                      behavior: "smooth",
+                    });
+                  } else {
+                    // Fallback if hero not found
+                    targetSection.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
                 } else {
-                  target.scrollIntoView({
+                  targetSection.scrollIntoView({
                     behavior: "smooth",
+                    block: "start",
                   });
                 }
               }
             }
-          });
-        });
+          }
+        }, true); // Use capture phase to ensure it runs before other handlers
       });
     </script>
   </body>

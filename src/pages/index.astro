@@ -824,24 +824,29 @@ import Layout from '../layouts/Layout.astro';
       }
     });
 
-    // Ensure keyboard focus moves to section heading for accessibility
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === '#') return;
-        
-        const target = document.querySelector(id);
-        if (!target) return;
+    // Handle focus management after scroll completes
+    // This listens for hash changes and scroll events to set focus
+    function handleSectionFocus() {
+      if (location.hash) {
+        const target = document.querySelector(location.hash) as HTMLElement;
+        if (target) {
+          setTimeout(() => {
+            const focusable = (target.querySelector('h1, h2, h3, [tabindex="-1"]') || target) as HTMLElement;
+            if (focusable) {
+              focusable.setAttribute('tabindex', '-1');
+              focusable.focus({ preventScroll: true });
+            }
+          }, 600);
+        }
+      }
+    }
 
-        // Small delay to let scroll finish
-        setTimeout(() => {
-          const focusable = (target.querySelector('h1, h2, h3, [tabindex="-1"]') || target) as HTMLElement;
-          if (focusable) {
-            focusable.setAttribute('tabindex', '-1');
-            focusable.focus({ preventScroll: true });
-          }
-        }, 450);
-      });
-    });
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleSectionFocus);
+    
+    // Also handle on page load if there's a hash
+    if (location.hash) {
+      handleSectionFocus();
+    }
   })();
 </script>
