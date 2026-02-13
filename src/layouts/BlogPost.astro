@@ -13,7 +13,7 @@ interface Props {
 const { title, description, date, category, heroImage, heroAlt } = Astro.props;
 ---
 
-<Layout title={`${title} | Blog | Maryam Akhyani`} description={description || title} currentPath="/blog">
+<Layout title={`${title} | Blog | Maryam Akhyani`} description={description || title} currentPath="/blog" ogImage={heroImage} ogType="article" publishedDate={date}>
   <!-- Logo -->
   <a href="/" class="logo" title="Maryam Akhyani"></a>
 
