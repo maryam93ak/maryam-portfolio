@@ -22,8 +22,11 @@ This is Maryam Akhyani's personal portfolio website built with Astro 5.14.1. It 
 ### Project Structure
 ```
 /
-├── public/           # Static assets (favicon, etc.)
+├── public/           # Static assets (favicon, images, CV PDF)
 ├── src/
+│   ├── content/
+│   │   └── blog/    # Blog posts as markdown files (Content Collections)
+│   ├── content.config.ts  # Content collection schema definitions
 │   ├── components/   # Reusable Astro components
 │   │   └── Navigation.astro  # Desktop (side) and mobile (bottom) navigation with dark mode toggle
 │   ├── layouts/      # Page layouts
@@ -32,16 +35,35 @@ This is Maryam Akhyani's personal portfolio website built with Astro 5.14.1. It 
 │   │   └── ProjectDetail.astro  # Project detail layout
 │   ├── pages/        # File-based routing
 │   │   ├── index.astro       # Homepage (Hero, About, Projects, Contact)
-│   │   ├── blog.astro        # Blog listing page
-│   │   ├── blog/             # Individual blog posts
+│   │   ├── blog.astro        # Blog listing page (pulls from content collection)
+│   │   ├── blog/[slug].astro # Dynamic blog post route (renders markdown)
 │   │   ├── playground.astro  # Playground page
 │   │   └── projects/         # Individual project pages
 │   └── styles/
 │       └── global.css        # CSS variables and global styles
-├── astro.config.mjs  # Astro configuration (minimal)
+├── astro.config.mjs  # Astro configuration
 ├── tsconfig.json     # TypeScript configuration (extends astro/tsconfigs/strict)
 └── package.json
 ```
+
+### Blog Content Collections
+
+Blog posts live in `src/content/blog/` as markdown files. Each file requires YAML frontmatter:
+
+```yaml
+---
+title: "Post Title"
+description: "Short description for cards and SEO"
+date: "Month Day, Year"
+category: "Category Name"
+tags: ["Tag1", "Tag2"]
+heroImage: "/image-path.png"
+heroAlt: "Alt text for hero image"
+featured: true  # shown on homepage project cards
+---
+```
+
+To add a new blog post: create a new `.md` file in `src/content/blog/`. The filename becomes the URL slug (e.g., `my-new-post.md` → `/blog/my-new-post`).
 
 ### Key Components
 
@@ -92,8 +114,8 @@ All scroll logic is implemented in the `<script>` tag in `Layout.astro:44-138`.
 
 Astro uses file-based routing:
 - `/` → `src/pages/index.astro` (homepage with all sections)
-- `/blog` → `src/pages/blog.astro` (blog listing)
-- `/blog/analytics` → `src/pages/blog/analytics.astro` (blog post)
+- `/blog` → `src/pages/blog.astro` (blog listing, pulls from content collection)
+- `/blog/[slug]` → `src/pages/blog/[slug].astro` (dynamic route, renders markdown from `src/content/blog/`)
 - `/playground` → `src/pages/playground.astro`
 - `/projects/*` → `src/pages/projects/*.astro`
 
