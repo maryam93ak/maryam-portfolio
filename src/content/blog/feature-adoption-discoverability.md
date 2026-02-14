@@ -1,6 +1,6 @@
 ---
 title: "Case Study: Doubling Feature Adoption by Solving for Discoverability"
-description: "How rethinking discoverability—not functionality—unlocked a 2x adoption rate and a measurable business impact."
+description: "How rethinking discoverability, not functionality, unlocked a 2x adoption rate and a measurable business impact."
 date: "October 22, 2025"
 category: "Case Study"
 tags: ["Case Study", "Discoverability", "Adoption", "Business Impact"]
@@ -20,7 +20,7 @@ The most valuable feature is the one a user can actually find. This is a story a
 
 ## 2. The Problem: A Solution Lost in the Flow
 
-Our user research consistently flagged a major pain point: over half of our customers needed help loading items into their trucks. To address this, we launched the "Loading Assistant" feature—an in-app add-on to officially request and pay for driver assistance.
+Our user research consistently flagged a major pain point: over half of our customers needed help loading items into their trucks. To address this, we launched the "Loading Assistant" feature, an in-app add-on to officially request and pay for driver assistance.
 
 Two months after launch, the data painted a challenging picture:
 

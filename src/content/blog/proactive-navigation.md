@@ -77,7 +77,7 @@ User sentiment saw a dramatic positive shift.
 
 > "The new traffic alert saved me from being late to a client meeting. It felt like magic."
 
-> "Finally, an app that thinks ahead! The one-tap route switch is brilliant—and safer."
+> "Finally, an app that thinks ahead! The one-tap route switch is brilliant and safer."
 
 ## 7. Reflections & Next Steps
 
@@ -85,7 +85,7 @@ This project reinforced that the best products don't just provide data; they pro
 
 ### Key Learnings
 
-- **The Experience Is the Product:** Our initial failure was designing a tool that asked the user to do the hard work. By understanding the user's emotional state while driving—stressed, focused, and needing simplicity—we were able to design a feature that felt like an intelligent partner.
+- **The Experience Is the Product:** Our initial failure was designing a tool that asked the user to do the hard work. By understanding the user's emotional state while driving (stressed, focused, and needing simplicity), we were able to design a feature that felt like an intelligent partner.
 - **From Choice to Confidence:** In high-stakes environments like driving, overwhelming users with choices can be counterproductive. Providing a single, confident recommendation built far more trust than showing them three mediocre options.
 
 ### Next Steps
