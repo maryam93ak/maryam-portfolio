@@ -105,3 +105,7 @@ This project was a powerful lesson in the value of iteration and humility. The p
 ### Next Steps - From One Problem to the Next
 
 Our work isn't done. While we solved the discoverability problem, our research clearly showed that the current feature still doesn't serve a key user segment: those who need help with very heavy items. Our next step is to scope a dedicated discovery sprint to explore a "Two-Person Team" or "Heavy-Duty" offering, allowing us to build on our momentum and solve for the next layer of user needs.
+
+---
+
+*This case study is from my time at SnappBox. Want to know how I got from architecture to product management? [Read my full story](/story).*

@@ -3,12 +3,55 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="My Story | Maryam Akhyani"
-  description="The journey from architecture to product management - a story of curiosity, design thinking, and human-centered innovation."
+  title="From Architecture to Product Management | Maryam Akhyani"
+  description="How I went from designing buildings in Iran to managing navigation and logistics products in Canada — a career transition driven by curiosity, systems thinking, and human-centered design."
   currentPath="/story"
 >
   <!-- Logo -->
   <a href="/" class="logo" title="Maryam Akhyani"></a>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "From Architecture to Product Management",
+    "description": "How Maryam Akhyani transitioned from designing buildings in Iran to managing navigation and logistics products in Canada.",
+    "url": "https://www.maryamakhyani.com/story/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Maryam Akhyani",
+      "jobTitle": "Software Product Manager",
+      "url": "https://www.maryamakhyani.com",
+      "image": "https://www.maryamakhyani.com/About.jpg",
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "RMJM Tehran Studio"
+        }
+      ],
+      "knowsAbout": [
+        "Product Management",
+        "UX Research",
+        "Architecture",
+        "Navigation Apps",
+        "Logistics Platforms",
+        "Career Transition"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/maryamakhyani/",
+        "https://github.com/maryam93ak"
+      ]
+    }
+  })} />
+
+  <!-- Story Header -->
+  <section class="story-header">
+    <div class="container">
+      <h1>From Architecture to Product Management</h1>
+      <p class="story-intro">
+        I started my career designing buildings and ended up designing digital products. That wasn't the plan — it was a series of choices driven by the same question: <em>how do people actually experience the systems around them?</em> Here's how that question took me from architectural studios in Iran to product teams in the tech industry, and eventually to Vancouver.
+      </p>
+    </div>
+  </section>
 
   <!-- Timeline Section -->
   <section class="timeline-section">
@@ -47,8 +90,11 @@ import Layout from '../layouts/Layout.astro';
                   <li><strong>Led cross-functional delivery features</strong> like tipping, ETA estimation, and pricing transparency for van and moving services.</li>
                   <li><strong>Boosted conversions</strong> through improved landing experiences, upsell design, and cross-channel integration.</li>
                 </ul>
+                <a href="/blog/feature-adoption-discoverability" class="story-case-link">Read the case study: Doubling Feature Adoption at SnappBox &rarr;</a>
               </li>
-              <li>At <strong>Balad Maps</strong>, took on complex <strong>navigation and routing challenges</strong>, leading the redesign of the <em>Alternative Routes</em> feature — turning it from a frustration point into a <strong>trusted co-pilot</strong> through data-driven experimentation and smarter UX.</li>
+              <li>At <strong>Balad Maps</strong>, took on complex <strong>navigation and routing challenges</strong>, leading the redesign of the <em>Alternative Routes</em> feature — turning it from a frustration point into a <strong>trusted co-pilot</strong> through data-driven experimentation and smarter UX.
+                <br/><a href="/blog/proactive-navigation" class="story-case-link">Read the case study: From Reactive to Proactive Navigation &rarr;</a>
+              </li>
               <li>Each project became a space where <strong>art met analytics</strong> — proving that logic and empathy can (and should) coexist in product design.</li>
             </ul>
           </div>
@@ -155,9 +201,55 @@ import Layout from '../layouts/Layout.astro';
     color: var(--primary-orange);
   }
 
+  /* --- Story Header --- */
+  .story-header {
+    padding: 8rem 2rem 3rem 2rem;
+    background: var(--light-bg);
+  }
+
+  .story-header .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .story-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .story-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    max-width: 660px;
+  }
+
+  .story-intro em {
+    color: var(--primary-orange);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .story-header {
+      padding: 6rem 1.5rem 2rem 1.5rem;
+    }
+
+    .story-header h1 {
+      font-size: 2rem;
+    }
+
+    .story-intro {
+      font-size: 1rem;
+    }
+  }
+
   /* --- Timeline Section --- */
   .timeline-section {
-    padding: 8rem 0 4rem 0;
+    padding: 2rem 0 4rem 0;
     background: var(--light-bg);
     min-height: 100vh;
     position: relative;
@@ -405,6 +497,21 @@ import Layout from '../layouts/Layout.astro';
     top: 0;
   }
 
+  .story-case-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--primary-orange);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .story-case-link:hover {
+    text-decoration: underline;
+    transform: translateX(4px);
+  }
+
   .timeline-content ul ul {
     margin-top: 0.75rem;
     margin-left: 1rem;
@@ -519,7 +626,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .timeline-section {
-      padding: 6rem 0 4rem 0;
+      padding: 1rem 0 4rem 0;
     }
 
     .scroll-indicator {

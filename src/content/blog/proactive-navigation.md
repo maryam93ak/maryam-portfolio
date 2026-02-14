@@ -91,3 +91,7 @@ This project reinforced that the best products don't just provide data; they pro
 ### Next Steps
 
 Our work was not done at this step. While we solved for proactive detours, our research showed users are still anxious about why they are being rerouted. Our next step was to explore adding contextual information to the suggestion, such as "Accident ahead" or "Heavy congestion," to give users even more confidence in the app's recommendations.
+
+---
+
+*This case study is from my time at Balad Maps. Want to know how I got from architecture to product management? [Read my full story](/story).*
