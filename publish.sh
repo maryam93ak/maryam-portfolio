@@ -7,15 +7,17 @@
 #   ./publish.sh --dry    Sync and build only (no commit/push) — for testing
 #   ./publish.sh --sync   Sync files only (no build, no commit)
 #
-# Source: ~/Life OS/writing/website/blog/*.md
+# Source: ~/Life OS/maryamakhyani.com/blog/*.md and ~/Life OS/maryamakhyani.com/playground/*.md
 # Target: src/content/blog/*.md
 #
 
 set -e
 
-VAULT_BLOG="$HOME/Life OS/writing/website/blog"
+VAULT_BLOG="$HOME/Life OS/maryamakhyani.com/blog"
+VAULT_PLAYGROUND="$HOME/Life OS/maryamakhyani.com/playground"
 REPO_DIR="$HOME/Programming/maryam-portfolio"
 REPO_BLOG="$REPO_DIR/src/content/blog"
+REPO_PLAYGROUND="$REPO_DIR/src/content/playground"
 
 MODE="${1:-deploy}"
 
@@ -54,11 +56,16 @@ echo -e "${GREEN}Found $SOURCE_COUNT post(s) in Obsidian vault${NC}"
 echo ""
 
 # --- Step 2: Sync files ---
-echo "Syncing posts to repo..."
-
-# Use rsync to mirror the vault blog folder to the repo
-# --delete removes files from target that no longer exist in source
+echo "Syncing blog posts to repo..."
 rsync -av --delete --include="*.md" --exclude="*" "$VAULT_BLOG/" "$REPO_BLOG/"
+
+echo ""
+echo "Syncing playground photos to repo..."
+if [ -d "$VAULT_PLAYGROUND" ]; then
+  rsync -av --delete --include="*.md" --exclude="playground-photo-template.md" --exclude="*" "$VAULT_PLAYGROUND/" "$REPO_PLAYGROUND/"
+else
+  echo -e "${YELLOW}No playground folder found — skipping.${NC}"
+fi
 
 echo ""
 echo -e "${GREEN}Sync complete.${NC}"
@@ -94,6 +101,7 @@ echo "Committing and pushing..."
 cd "$REPO_DIR"
 
 git add src/content/blog/
+git add src/content/playground/
 git add public/
 
 # Check if there are actual changes to commit
@@ -103,8 +111,8 @@ if git diff --cached --quiet; then
 fi
 
 # Build a commit message listing changed files
-CHANGED_FILES=$(git diff --cached --name-only | sed 's|src/content/blog/||' | sed 's|.md||' | tr '\n' ', ' | sed 's/,$//')
-git commit -m "publish: update blog content ($CHANGED_FILES)"
+CHANGED_FILES=$(git diff --cached --name-only | sed 's|src/content/blog/||' | sed 's|src/content/playground/||' | sed 's|.md||' | tr '\n' ', ' | sed 's/,$//')
+git commit -m "publish: update content ($CHANGED_FILES)"
 
 git push
 

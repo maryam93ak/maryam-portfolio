@@ -15,4 +15,15 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const playground = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/playground' }),
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    tagline: z.string(),
+    image: z.string(),       // path to file in /public/playground/
+    order: z.number().default(99),
+  }),
+});
+
+export const collections = { blog, playground };
