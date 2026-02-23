@@ -13,7 +13,7 @@ The most valuable feature is the one a user can actually find. This is a story a
 
 ## 1. Context
 
-- **Company:** SnappBox — Iran's leading on-demand logistics platform for goods and moving services. Operated by Snapp Group, Iran's dominant super-app (ride-hailing, food delivery, logistics), comparable in scale and market position to Uber in North America.
+- **Company:** SnappBox, Iran's leading on-demand logistics platform for goods and moving services. Operated by Snapp Group, Iran's dominant super-app (ride-hailing, food delivery, logistics), comparable in scale and market position to Uber in North America.
 - **My Role:** Product Manager for the core booking experience.
 - **Team:** I led a cross-functional team of 1 Senior Designer, 4 Engineers, 1 QA Analyst, and collaborated closely with Data Science, Marketing, and Customer Support.
 - **Business Goal:** Increase Average Order Value (AOV) and improve customer retention by solving key pain points in the moving process.
@@ -108,4 +108,4 @@ Our work isn't done. While we solved the discoverability problem, our research c
 
 ---
 
-*This case study is from my time as Product Manager at SnappBox, a subsidiary of Snapp Group — Iran's largest tech platform, with tens of millions of users. Want to know how I got from architecture to product management? [Read my full story](/story).*
+*This case study is from my time as Product Manager at SnappBox, a subsidiary of Snapp Group, Iran's largest tech platform with tens of millions of users. Want to know how I got from architecture to product management? [Read my full story](/story).*
