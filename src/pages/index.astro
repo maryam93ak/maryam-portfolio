@@ -72,6 +72,7 @@ import Layout from '../layouts/Layout.astro';
         alt="Doubling Feature Adoption by Solving for Discoverability" />
 
           <div class="project-card-content">
+            <p class="project-stat">2x feature adoption rate</p>
             <h3>Doubling Feature Adoption by Solving for Discoverability</h3>
             <p class="project-excerpt">
               How rethinking discoverability (not functionality) unlocked a 2x adoption rate and a measurable business impact.
@@ -95,6 +96,7 @@ import Layout from '../layouts/Layout.astro';
           alt="Case Study: From Reactive to Proactive Navigation" />
 
           <div class="project-card-content">
+            <p class="project-stat">+45% engagement</p>
             <h3>Case Study: From Reactive to Proactive Navigation</h3>
             <p class="project-excerpt">
               How transforming a broken alternative route feature into an intelligent co-pilot increased engagement by 45% and rebuilt user trust.
@@ -679,6 +681,15 @@ import Layout from '../layouts/Layout.astro';
 
   .project-card-content {
     padding: 1.5rem;
+  }
+
+  .project-stat {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
   }
 
   .project-card h3 {
