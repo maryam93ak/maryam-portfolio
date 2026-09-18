@@ -1,4 +1,5 @@
 ---
+import { person } from '../data/person';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -12,35 +13,11 @@ import Layout from '../layouts/Layout.astro';
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "AboutPage",
+    "@type": "ProfilePage",
     "name": "From Architecture to Product Management",
     "description": "How Maryam Akhyani transitioned from designing buildings in Iran to managing navigation and logistics products in Canada.",
     "url": "https://www.maryamakhyani.com/story/",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Maryam Akhyani",
-      "jobTitle": "Product Manager",
-      "url": "https://www.maryamakhyani.com",
-      "image": "https://www.maryamakhyani.com/About.jpg",
-      "alumniOf": [
-        {
-          "@type": "EducationalOrganization",
-          "name": "RMJM Tehran Studio"
-        }
-      ],
-      "knowsAbout": [
-        "Product Management",
-        "UX Research",
-        "Architecture",
-        "Navigation Apps",
-        "Logistics Platforms",
-        "Career Transition"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/maryamakhyani/",
-        "https://github.com/maryam93ak"
-      ]
-    }
+    "mainEntity": person
   })} />
 
   <!-- Story Header -->

@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const photos = (await getCollection('playground')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Playground - Maryam Akhyani" description="Explore my creative playground featuring diverse photography projects across landscapes, portraits, architecture, and more.">
+<Layout noindex={photos.length === 0} title="Playground - Maryam Akhyani" description="Explore my creative playground featuring diverse photography projects across landscapes, portraits, architecture, and more.">
   <main class="playground-page">
     <!-- Logo -->
     <a href="/" class="logo">
@@ -38,7 +38,7 @@ const photos = (await getCollection('playground')).sort((a, b) => a.data.order -
     <!-- Playground Grid -->
     <div class="playground-content">
       {photos.length === 0 ? (
-        <p class="empty-state">No photos yet. Add markdown files to your playground collection to get started.</p>
+        <p class="empty-state">Photos coming soon.</p>
       ) : (
         <div class="playground-grid">
           {photos.map((photo) => (

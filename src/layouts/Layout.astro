@@ -1,6 +1,13 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-700.css';
+import '@fontsource/playfair-display/latin-700.css';
+import interRegular from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import playfairBold from '@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2?url';
 import '../styles/global.css';
+import { person } from '../data/person';
 
 interface Props {
   title: string;
@@ -9,9 +16,10 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   publishedDate?: string;
+  noindex?: boolean;
 }
 
-const { title, description, currentPath = "/", ogImage, ogType = "website", publishedDate } = Astro.props;
+const { title, description, currentPath = "/", ogImage, ogType = "website", publishedDate, noindex = false } = Astro.props;
 const siteUrl = "https://www.maryamakhyani.com";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const resolvedOgImage = ogImage?.startsWith("http") ? ogImage : `${siteUrl}${ogImage || "/About.jpg"}`;
@@ -28,6 +36,7 @@ const resolvedOgImage = ogImage?.startsWith("http") ? ogImage : `${siteUrl}${ogI
     <meta name="description" content={description} />
     <meta name="author" content="Maryam Akhyani" />
     <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -54,44 +63,24 @@ const resolvedOgImage = ogImage?.startsWith("http") ? ogImage : `${siteUrl}${ogI
         "image": resolvedOgImage,
         "url": canonicalUrl,
         "datePublished": publishedDate,
-        "author": {
-          "@type": "Person",
-          "name": "Maryam Akhyani",
-          "url": siteUrl
-        },
-        "publisher": {
-          "@type": "Person",
-          "name": "Maryam Akhyani",
-          "url": siteUrl
-        }
+        "author": { "@type": "Person", "@id": person["@id"], "name": person.name, "url": siteUrl },
+        "publisher": { "@type": "Person", "@id": person["@id"], "name": person.name, "url": siteUrl }
       })} />
     ) : currentPath === "/" ? (
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Maryam Akhyani",
-        "url": siteUrl,
-        "jobTitle": "Software Product Manager",
-        "description": "Software Product Manager with a background in architecture and design, bridging creativity, empathy, and execution.",
-        "image": `${siteUrl}/About.jpg`,
-        "sameAs": [
-          "https://www.linkedin.com/in/maryamakhyani/",
-          "https://github.com/maryam93ak"
-        ],
-        "knowsAbout": ["Product Management", "UX Research", "User Experience", "Product Strategy", "SaaS"]
+        "@type": "ProfilePage",
+        "url": canonicalUrl,
+        "mainEntity": person
       })} />
     ) : null}
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Maryam Akhyani | Blog" href="/rss.xml" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Self-hosted fonts: preload the two faces used above the fold -->
+    <link rel="preload" href={interRegular} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={playfairBold} as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <Navigation currentPath={currentPath} />
@@ -195,7 +184,6 @@ const resolvedOgImage = ogImage?.startsWith("http") ? ogImage : `${siteUrl}${ogI
 
         // Attach scroll event listener
         window.addEventListener("scroll", onScroll, { passive: true });
-
         // Smooth scroll for anchor links
         // Use event delegation to ensure it works even if elements are added dynamically
         document.addEventListener("click", function (e: Event) {

@@ -16,7 +16,7 @@ const blog = defineCollection({
 });
 
 const playground = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/playground' }),
+  loader: glob({ pattern: ['**/*.md', '!**/playground-photo-template.md'], base: './src/content/playground' }),
   schema: z.object({
     title: z.string(),
     category: z.string(),
