@@ -96,10 +96,10 @@ import Layout from '../layouts/Layout.astro';
           alt="Case Study: From Reactive to Proactive Navigation" />
 
           <div class="project-card-content">
-            <p class="project-stat">+45% engagement</p>
+            <p class="project-stat">+4% ETA accuracy</p>
             <h3>Case Study: From Reactive to Proactive Navigation</h3>
             <p class="project-excerpt">
-              How transforming a broken alternative route feature into an intelligent co-pilot increased engagement by 45% and rebuilt user trust.
+              How transforming a broken alternative route feature into an intelligent co-pilot led to a proactive routing engine and a 4% gain in ETA prediction accuracy.
             </p>
             <div class="tags">
               <span class="tag">Case Study</span>
@@ -123,14 +123,19 @@ import Layout from '../layouts/Layout.astro';
         talk about a role, email me or reach out on LinkedIn.
       </p>
 
-      <form class="contact-form" action="https://formspree.io/f/xcontact" method="POST">
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/maryam.akhyani@gmail.com" method="POST">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email" required />
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name" autocomplete="name" required />
+          <input type="email" name="email" placeholder="Your email" aria-label="Your email" autocomplete="email" required />
         </div>
-        <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+        <textarea name="message" placeholder="Your message..." aria-label="Your message" rows="5" required></textarea>
+        <input type="hidden" name="_subject" value="New message from maryamakhyani.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://www.maryamakhyani.com/#contact" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="contact-button">Send Message</button>
       </form>
+      <p class="contact-alt" id="contact-status" role="status" aria-live="polite" hidden></p>
 
       <p class="contact-alt">Or email me directly at <a href="mailto:Maryam.Akhyani@gmail.com">Maryam.Akhyani@gmail.com</a></p>
     </div>
@@ -854,6 +859,34 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  // Contact form: send through FormSubmit's AJAX endpoint so the visitor stays on the page.
+  // Without JavaScript the form still posts normally and FormSubmit redirects back here.
+  const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+  const contactStatus = document.getElementById('contact-status');
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = contactForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    button.disabled = true;
+    if (contactStatus) { contactStatus.hidden = false; contactStatus.textContent = "Sending..."; }
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/maryam.akhyani@gmail.com', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'send failed');
+      contactForm.reset();
+      if (contactStatus) contactStatus.textContent = "Thanks, your message was sent. I'll reply by email.";
+    } catch {
+      if (contactStatus) contactStatus.textContent = 'Sorry, that did not go through. Please email me directly at maryam.akhyani@gmail.com.';
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>
 
 <script>
   (function () {

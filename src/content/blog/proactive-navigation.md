@@ -1,6 +1,6 @@
 ---
 title: "Case Study: From Reactive to Proactive Navigation"
-description: "How transforming a broken alternative route feature into an intelligent co-pilot increased engagement by 45% and rebuilt user trust."
+description: "How research into a broken alternative route feature led to a proactive routing engine, a 4% gain in ETA prediction accuracy, and renewed user trust."
 date: "October 24, 2025"
 category: "Case Study"
 tags: ["Case Study", "Navigation", "User Experience", "Product Strategy"]
@@ -14,7 +14,7 @@ The most frustrating experience in navigation is being told you're on the "faste
 ## 1. Context
 
 - **Product:** A local mobile navigation app with a focus on real-time traffic avoidance.
-- **My Role:** Product Manager for the Core Navigation Experience.
+- **My Role:** UX Researcher, then Product Manager for the Core Navigation Experience. I found the root cause as a researcher and led the solution as PM.
 - **Team:** I led a cross-functional team of 1 UX Designer, 3 Engineers, and 1 Data Scientist, collaborating with our traffic data partners.
 - **Business Goal:** Increase engagement with routing suggestions and improve user retention by delivering a more reliable and proactive navigation experience.
 
@@ -42,9 +42,9 @@ To validate our hypothesis, we initiated a two-pronged research effort.
 
 Working with our data scientist, we analyzed thousands of trips where users encountered major traffic. We discovered a clear pattern: the app would often detect the slowdown only when the user was already in it, at which point no alternative could offer a meaningful improvement.
 
-### In-Car User Interviews
+### Field Research With Drivers
 
-We conducted interviews with daily commuters. The "aha!" moment came when we realized users didn't want to be route planners while driving. They felt anxious having to compare multiple options on a map and wanted the app to simply tell them the best way to go with confidence.
+Alongside 300+ user interviews, I ran a real-world routing experiment with 5+ drivers across 20+ live sessions, combining what we saw in the car with traffic patterns, trip histories, and route selection data. The "aha!" moment came when we realized users didn't want to be route planners while driving. They felt anxious having to compare multiple options on a map and wanted the app to simply tell them the best way to go with confidence.
 
 Our research confirmed it: users didn't want more choices; they wanted a smarter decision made for them.
 
@@ -62,14 +62,12 @@ We completely redesigned the in-drive interface to be safe and seamless. Instead
 
 ## 6. The Results: Rebuilding Trust
 
-We rolled out the new experience to all of our beta users (15% of our userbase) for over two weeks. The impact was immediate and significant.
+We rolled out the new experience to all of our beta users (15% of our userbase) for over two weeks.
 
 ### Quantitative Impact
 
-- **+45%** engagement with alternative route suggestions.
-- An average of **9 minutes saved** per trip for engaged users during peak hours.
-- A **+5% increase** in 30-day user retention.
-- A **-60% reduction** in support tickets related to traffic and routing complaints.
+- **+4%** ETA prediction accuracy, from working closely with our data scientists to refine the traffic prediction model behind the Proactive Routing Engine.
+- **5+ A/B experiments** on the navigation UI and recommendation modules validated the Smart Suggestion design and drove adoption before full rollout.
 
 ### Qualitative Impact
 
