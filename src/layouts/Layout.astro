@@ -36,6 +36,8 @@ const resolvedOgImage = ogImage?.startsWith("http") ? ogImage : `${siteUrl}${ogI
     <meta name="description" content={description} />
     <meta name="author" content="Maryam Akhyani" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
     {noindex && <meta name="robots" content="noindex" />}
 
     <!-- Open Graph -->

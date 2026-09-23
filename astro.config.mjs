@@ -10,6 +10,7 @@ const hasPlaygroundPhotos = readdirSync('./src/content/playground')
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.maryamakhyani.com',
+  build: { inlineStylesheets: 'always' },
   integrations: [
     sitemap({
       filter: (page) => hasPlaygroundPhotos || !page.includes('/playground/'),

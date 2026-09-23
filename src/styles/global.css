@@ -1,3 +1,21 @@
+/* Local fallbacks sized to match the web fonts, so text keeps its layout while fonts load */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22.4%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Playfair Fallback";
+  src: local("Times New Roman"), local("Times");
+  size-adjust: 111%;
+  ascent-override: 97%;
+  descent-override: 22.5%;
+  line-gap-override: 0%;
+}
+
 /* CSS Variables for the color palette */
 :root {
   --primary-orange: #d96d2b;
@@ -35,7 +53,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Inter Fallback", sans-serif;
   background-color: var(--light-bg);
   color: var(--text-dark);
   line-height: 1.6;
@@ -54,7 +72,7 @@ body {
 /* Typography */
 h1,
 h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", "Playfair Fallback", serif;
 }
 
 h2 {
